@@ -1,0 +1,23 @@
+{
+  "badge": "Médica Neuróloga · Certificada [escuela]",
+  "title": {
+    "italic": "Dra. Paloma",
+    "normal": "Durán Botello"
+  },
+  "specialty":   "Especialista en Neurología · Irapuato, Guanajuato",
+  "description": "Diagnóstico y tratamiento integral de enfermedades del sistema nervioso con un enfoque humano, preciso y basado en evidencia científica de vanguardia.",
+  "cta": {
+    "primary":  { "label": "Agendar consulta", "href": "#contacto" },
+    "whatsapp": { "label": "WhatsApp",         "href": "https://wa.me/5255000000" }
+  },
+  "photo": {
+    "initials": "PD",
+    "name":     "Dra. Paloma Durán",
+    "license":  "Neuróloga · Cédula [número]"
+  },
+  "stats": [
+    { "value": "[n]", "suffix": "+", "label": "Años de experiencia" },
+    { "value": "4",   "suffix": "k", "label": "Pacientes atendidos"  },
+    { "value": "98",  "suffix": "%", "label": "Satisfacción"         }
+  ]
+}
