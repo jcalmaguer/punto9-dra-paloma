@@ -1,0 +1,21 @@
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(11, 37, 69, 0.97);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6vw; height: 72px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--blue-light), var(--blue-accent));
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+}
+.nav-logo svg { width: 22px; height: 22px; }
+.nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--white); line-height: 1.2; }
+.nav-name span { display: block; font-size: 0.68rem; font-weight: 300; font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.5); letter-spacing: 0.12em; text-transform: uppercase; }
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--blue-light) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 6px; font-weight: 500 !important; }
