@@ -1,0 +1,16 @@
+{
+  "brand": {
+    "name":      "Dra. Paloma Montiel",
+    "specialty": "Neurología Clínica"
+  },
+  "links": [
+    { "label": "Especialidades", "href": "#especialidades" },
+    { "label": "Perfil",         "href": "#perfil"         },
+    { "label": "Proceso",        "href": "#proceso"        },
+    { "label": "Testimonios",    "href": "#testimonios"    }
+  ],
+  "cta": {
+    "label": "Agendar cita",
+    "href":  "#contacto"
+  }
+}
