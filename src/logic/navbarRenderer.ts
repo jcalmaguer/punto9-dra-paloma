@@ -1,4 +1,4 @@
-import type { NavbarData, NavLink } from '../types'
+import type { NavbarData, NavLink } from '../types/types'
 
 // SVG de neurona: nodo central con axones irradiando — evoca neurología sin ser un cerebro literal
 const NEURO_ICON = `

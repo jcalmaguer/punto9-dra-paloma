@@ -1,6 +1,6 @@
 import navbarData from '../data/navbar.json'
 import { renderNavbar } from '../logic/navbarRenderer'
-import type { NavbarData } from '../types'
+import type { NavbarData } from '../types/types'
 
 export function mountNavbar(containerId: string): void {
   const container = document.getElementById(containerId)
