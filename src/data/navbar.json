@@ -4,7 +4,7 @@
     "specialty": "Neurología Clínica"
   },
   "links": [
-    { "label": "Especialidades", "href": "#especialidades" },
+    { "label": "Especialidades", "href": "#specialties" },
     { "label": "Perfil",         "href": "#perfil"         },
     { "label": "Proceso",        "href": "#proceso"        },
     { "label": "Testimonios",    "href": "#testimonios"    }
