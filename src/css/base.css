@@ -1,0 +1,113 @@
+/* ==========================================================================
+   BASE.CSS
+   Global reset, design tokens, base typography and animations
+   Dra. Paloma Durán — Clinical Neurology
+
+   DESIGN SYSTEM PHILOSOPHY:
+   Every token here is a deliberate decision. Navy conveys institutional
+   depth without coldness. The two brand blues (#0192E5 + #82C5F4) work
+   as a pair: primary for actions on light backgrounds, accent for
+   highlights on dark ones. No token is decorative — each has an assigned
+   role and should only be used for that role.
+   ========================================================================== */
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+
+:root {
+
+  /* Brand blues — official identity of Dra. Paloma
+     --blue-light and --blue-accent are the two source-of-truth colors.
+     All other blue variants are derived from them and must not be
+     replaced with arbitrary hex values elsewhere in the codebase. */
+  --blue-light:  #0192E5;   /* Primary brand blue  — CTAs, icons, dividers, borders    */
+  --blue-accent: #82C5F4;   /* Secondary brand blue — highlights on dark backgrounds   */
+  --blue-dark:   #0173B5;   /* Darkened primary     — hover and active states          */
+  --blue-mid:    #0A6CA8;   /* Mid-range blue       — text accents on light surfaces   */
+  --blue-pale:   #CDE9FB;   /* Light tint           — soft backgrounds, avatar fills   */
+  --blue-mist:   #EAF6FE;   /* Lightest tint        — icon containers, card surfaces   */
+
+  /* Neutrals */
+  --navy:        #0B2545;   /* Institutional dark   — hero bg, nav, contact section    */
+  --white:       #FFFFFF;
+  --cream:       #F7FAFD;   /* Off-white            — alternating section backgrounds  */
+  --text-dark:   #0D1B2A;   /* Body text on light   — headings and primary copy        */
+  --text-muted:  #5A7390;   /* Secondary text       — descriptions, labels, captions   */
+
+  /* Accents */
+  --gold:        #C49A3C;   /* Star ratings and decorative highlights                  */
+
+  /* Borders */
+  --border:      #C3E2F9;   /* Derived from --blue-accent at low opacity               */
+}
+
+/* ── Base typography ─────────────────────────────────────────────────────── */
+
+/* DM Sans as the system font: clinical readability, modern neutrality.
+   Cormorant Garamond is loaded per-component where institutional
+   elegance is needed (headings, doctor's name, section titles). */
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent font-size inflation on mobile orientations */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  overflow-x: hidden;
+  /* Optical baseline — comfortable default for all prose */
+  line-height: 1.6;
+}
+
+/* ── Global animations ───────────────────────────────────────────────────── */
+
+/* fadeUp: entrance animation for content blocks and section headers.
+   28px offset chosen deliberately — noticeable enough to read as
+   "arriving", subtle enough to not feel theatrical for a medical site. */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* fadeRight: entrance for photo columns and side panels.
+   Mirrors fadeUp logic on the X axis. */
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* pulseWA: attention loop for the floating WhatsApp button.
+   Green glow only — never uses brand blues, keeping WhatsApp's
+   semantic color identity intact as an "instant access" signal. */
+@keyframes pulseWA {
+  0%, 100% {
+    box-shadow: 0 4px 22px rgba(37, 211, 102, 0.42);
+  }
+  50% {
+    box-shadow:
+      0 4px 34px rgba(37, 211, 102, 0.65),
+      0 0 0 9px rgba(37, 211, 102, 0.09);
+  }
+}

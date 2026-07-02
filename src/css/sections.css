@@ -1,0 +1,889 @@
+/* ==========================================================================
+   SECTIONS.CSS
+   Section-specific layout — Dra. Paloma Durán, Clinical Neurology
+
+   ARCHITECTURE RULE:
+   This file owns positioning, spacing, grid structure and background color
+   for each page section. Visual appearance of reusable pieces (buttons,
+   cards, form inputs) belongs in components.css — not here.
+
+   SECTION ORDER mirrors the page flow:
+   Generic wrappers → Hero → Especialidades → Perfil → Proceso
+   → Testimonios → Contacto → Footer → Responsive
+   ========================================================================== */
+
+/* ── Generic section wrappers ────────────────────────────────────────────── */
+
+/* Consistent vertical rhythm across all content sections.
+   6vw horizontal padding matches the nav and hero for optical alignment. */
+.section {
+  padding: 96px 6vw;
+}
+
+/* Alternating cream / white backgrounds create section separation
+   without needing borders or shadows between them.
+   The rhythm: Hero (navy) → Especialidades (cream) → Perfil (white)
+   → Proceso (cream) → Testimonios (white) → Contacto (navy) */
+.section-cream { background: var(--cream); }
+.section-white  { background: var(--white); }
+
+/* ── Hero ────────────────────────────────────────────────────────────────── */
+
+/* Full-viewport-height dark section: the patient's first impression.
+   Navy communicates institutional seriousness without the coldness
+   of pure black. overflow: hidden clips the absolute SVG background
+   and the photo column that extends beyond the bottom edge. */
+.hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 110%, rgba(1, 146, 229, 0.08) 0%, transparent 70%),
+    var(--navy);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 6vw 100px;
+}
+
+/* Decorative SVG (concentric MRI circles): absolute, right side,
+   vertically centered. Opacity 0.04 — subliminal neuroimaging reference.
+   pointer-events: none ensures it never blocks clicks on the photo column. */
+.hero-bg {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  height: 560px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* Left accent bar: EEG signal reference.
+   Gradient fades at both ends so it never feels like a hard border.
+   Width 4px — structural presence without visual noise. */
+.hero-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--blue-light) 40%,
+    transparent
+  );
+}
+
+/* Text content column: constrained to 560px so line lengths stay
+   readable (~70 chars at 1rem). z-index 2 keeps it above the SVG bg.
+   fadeUp animation provides a calm, non-theatrical entrance. */
+.hero-content {
+  max-width: 560px;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 0.9s ease both;
+}
+
+/* Certification badge: the first thing the patient reads.
+   Establishes credentials before the name, not after.
+   Pill shape (100px radius) feels approachable, not clinical-cold.
+   The pulsing dot left of the text implies active practice. */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(130, 197, 244, 0.12);
+  border: 1px solid rgba(130, 197, 244, 0.28);
+  color: var(--blue-accent);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-accent);
+  flex-shrink: 0;
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(130, 197, 244, 0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(130, 197, 244, 0);   }
+}
+
+/* Doctor's name: Cormorant Garamond weight 400.
+   Italic first line (first name) = personal warmth.
+   Normal second line (surname) = professional authority.
+   clamp() eliminates breakpoint-specific font-size overrides. */
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--blue-accent);
+  font-weight: 300;
+}
+
+/* Specialty + location line: uppercase versals, wide tracking, low opacity.
+   Reads as a clinical subtitle — precise, not decorative. */
+.hero-sub {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+/* Description paragraph: line-height 1.78 signals patience and care.
+   Max-width 480px keeps it tight enough to read as a single focused message. */
+.hero p {
+  font-size: 1rem;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 480px;
+  margin-bottom: 42px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Hero — photo column ─────────────────────────────────────────────────── */
+
+/* Absolute-positioned right column, anchored to the bottom of the section.
+   The photo frame intentionally extends below the hero into the next section —
+   it breaks the grid slightly, making the layout feel intentional and premium
+   rather than rigidly templated. */
+.hero-photo-col {
+  position: absolute;
+  right: 6vw;
+  bottom: 0;
+  width: 360px;
+  z-index: 2;
+  animation: fadeRight 1s ease 0.2s both;
+}
+
+/* Arch-top frame: the rounded arch references academic portrait frames
+   and medical degree medallions. It communicates "this is a real person
+   with a formal professional history" before the patient reads a word.
+   Gradient darkens toward the bottom so the frame blends into the hero. */
+.hero-photo-frame {
+  width: 320px;
+  height: 420px;
+  margin: 0 auto;
+  background: linear-gradient(160deg, var(--blue-mid) 0%, var(--navy) 100%);
+  border-radius: 180px 180px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow:
+    inset 0 0 0 1px rgba(130, 197, 244, 0.1),
+    0 0 60px rgba(1, 146, 229, 0.1);
+}
+
+/* Initials placeholder: oversized, very faint — a ghost of the doctor's
+   presence. When the real photo is available, set display: none on this
+   element. The opacity ensures it never competes with an actual photo. */
+.hero-photo-ini {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem;
+  font-weight: 300;
+  color: rgba(130, 197, 244, 0.07);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: -4px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Name + license tag: glassmorphism anchored to the bottom of the frame.
+   backdrop-filter blur softens whatever content is behind it.
+   white-space: nowrap prevents the name from wrapping awkwardly. */
+.hero-photo-tag {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 10px;
+  padding: 11px 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero-photo-tag strong {
+  display: block;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.hero-photo-tag span {
+  display: block;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Hero — stats bar ────────────────────────────────────────────────────── */
+
+/* Stats sit at the bottom-left, below the text content.
+   right: calc(photo width + photo right offset + breathing room)
+   ensures they never overlap the photo column at any viewport. */
+.hero-stats {
+  position: absolute;
+  bottom: 36px;
+  left: 6vw;
+  right: calc(360px + 6vw + 20px);
+  display: flex;
+  gap: 0;
+  z-index: 2;
+  animation: fadeUp 0.9s ease 0.4s both;
+}
+
+.stat-item {
+  flex: 1;
+  padding-right: 32px;
+  position: relative;
+}
+
+.stat-item + .stat-item {
+  padding-left: 32px;
+  padding-right: 0;
+}
+
+/* Hairline divider between stats: 1px, 10% opacity.
+   Visible enough to separate, invisible enough not to fragment. */
+.stat-item + .stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Large numeral: Cormorant Garamond for visual weight without heaviness.
+   Negative letter-spacing makes multi-digit numbers read as a single unit. */
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Suffix (+, k, %): smaller and in primary brand blue —
+   chromatic accent that makes each number instantly scannable. */
+.stat-num span {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--blue-light);
+  margin-left: 1px;
+}
+
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.42);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 5px;
+}
+
+/* ── Especialidades ──────────────────────────────────────────────────────── */
+
+/* auto-fit + minmax: maximum cards per row at any width, minimum 260px.
+   No JS breakpoint logic needed — CSS handles the reflow automatically.
+   Typical result: 3 columns on desktop, 2 on tablet, 1 on mobile. */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* ── Perfil / About ──────────────────────────────────────────────────────── */
+
+/* Two equal columns: left is the visual (photo + badge), right is the text.
+   72px gap creates a clear visual pause between image and copy —
+   neither feels cramped nor disconnected. align-items: center keeps
+   the photo and text blocks vertically centered regardless of height. */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Photo placeholder: 4/5 aspect ratio mirrors a professional portrait.
+   Gradient from --blue-mist to --blue-pale stays within the brand palette
+   while feeling warmer than a flat color. */
+.about-photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-width: 380px;
+  background: linear-gradient(145deg, var(--blue-mist), var(--blue-pale));
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large initials as photo placeholder — same ghost-presence logic as hero. */
+.about-ini {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem;
+  font-weight: 300;
+  color: var(--blue-pale);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Credential badge: floats over the bottom-right corner of the photo frame.
+   Navy background anchors it visually to the nav and hero.
+   Negative offset (-18px) overlaps the frame edge — premium detail that
+   makes the badge feel embedded, not placed on top. */
+.about-badge {
+  position: absolute;
+  bottom: -18px;
+  right: -18px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 18px 22px;
+  text-align: center;
+}
+
+.about-badge strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.about-badge span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 3px;
+}
+
+/* Credential label above the h2: small-caps blue, same eyebrow pattern
+   as section headers — creates visual continuity across the page. */
+.about-cred {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--blue-light);
+  margin-bottom: 22px;
+}
+
+.about-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.about-text h2 em {
+  font-style: italic;
+  color: var(--blue-mid);
+}
+
+.about-text p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+/* Credentials list: dot + text pairs.
+   flex column with consistent gap replaces bullet lists —
+   more control over spacing, dot size and alignment. */
+.cred-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 24px 0 32px;
+}
+
+.cred-item {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+/* Brand-blue dot: 7px, top-offset 6px to optically align
+   with the first line of text (not the center of the block). */
+.cred-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.cred-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.86rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.cred-text strong {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ── Proceso ─────────────────────────────────────────────────────────────── */
+
+/* 4-column grid for the 4 process steps.
+   The horizontal connector line is drawn with ::before on the container —
+   one element, no JS, no SVG, no extra markup. */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Connector line: spans from the center of step 1 to the center of step 4.
+   calc(12.5% + 27px): 12.5% is half of one column (1/8 of the grid),
+   + 27px is half of the 54px step circle — lands exactly at center.
+   z-index 0 keeps it behind the number circles (z-index 1). */
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: calc(12.5% + 27px);
+  right: calc(12.5% + 27px);
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.step-item {
+  text-align: center;
+  padding: 0 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Step number circle: navy fill with a white inner border and a brand-blue
+   outer ring (via box-shadow). The layered border signals "milestone" —
+   the patient understands this is a numbered sequence, not a bullet list. */
+.step-num {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 1px var(--border);
+}
+
+.step-item h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.step-item p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.81rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── Testimonios ─────────────────────────────────────────────────────────── */
+
+/* Same auto-fit pattern as cards-grid but with a wider minimum.
+   290px minimum keeps testimonials from becoming too narrow to read
+   the quote comfortably. */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 22px;
+}
+
+/* ── Contacto ────────────────────────────────────────────────────────────── */
+
+/* Returns to navy after the white testimonials section — the color rhythm
+   bookends the page: Navy (hero) → light sections → Navy (contact).
+   Patients subconsciously read this as "we're back to where the doctor is." */
+.contact-section {
+  background: var(--navy);
+  padding: 96px 6vw;
+}
+
+/* Asymmetric grid: the form column is 30% wider than the info column.
+   The form is the primary action — it deserves more visual real estate. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.contact-info h2 em {
+  font-style: italic;
+  color: var(--blue-accent);
+}
+
+.contact-info > p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.91rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.76;
+  margin-bottom: 34px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Contact data row: icon + label + value.
+   align-items: center works when value is a single line.
+   For multi-line values (address), switch to flex-start via modifier. */
+.contact-item {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+/* Icon container: brand blue at 18% opacity — present on navy without
+   creating a harsh filled square. The icon SVG uses --blue-accent
+   (lighter) to ensure contrast against the dark tinted background. */
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: rgba(1, 146, 229, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 19px;
+  height: 19px;
+  stroke: var(--blue-accent);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Label + value stacked vertically inside each contact row. */
+.c-strong {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 2px;
+}
+
+.c-val {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.91rem;
+  color: var(--white);
+  line-height: 1.4;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+/* Deeper than --navy (#0B2545): #06172B creates a clear visual
+   separation between the contact section and the footer.
+   They share a dark background family but read as distinct zones. */
+footer {
+  background: #06172B;
+  padding: 50px 6vw 30px;
+}
+
+/* 4-column footer: brand block gets 2fr (double width), link columns
+   get 1fr each. Gives the brand identity more presence than the links. */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 44px;
+}
+
+.footer-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.footer-brand-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.32);
+  margin-top: 2px;
+}
+
+.footer-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.68;
+  margin-top: 12px;
+  max-width: 230px;
+}
+
+/* Column headings: same eyebrow treatment as section headers —
+   visual consistency tells the patient they're in the same design system. */
+.footer-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.32);
+  margin-bottom: 14px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-links a {
+  font-family: 'DM Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.52);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+/* Bottom bar: copyright left, social icons right.
+   Hairline top border separates it from the link columns above. */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.77rem;
+  color: rgba(255, 255, 255, 0.26);
+  line-height: 1.5;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Tablet (≤ 960px)
+   Photo column hides — insufficient space to render without crowding.
+   Stats expand to fill the full width since the photo is gone.
+   About and contact grids collapse to single column. */
+@media (max-width: 960px) {
+  .hero {
+    padding: 110px 6vw 140px;
+  }
+
+  .hero-photo-col {
+    display: none;
+  }
+
+  .hero-stats {
+    right: 6vw;
+    bottom: 44px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Process steps: 4 → 2 columns.
+     Connector line removed — it can't span correctly in a 2×2 grid. */
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+/* Mobile (≤ 600px)
+   Single column throughout. Tighter section padding to preserve
+   content-to-viewport ratio on narrow screens. */
+@media (max-width: 600px) {
+  .section {
+    padding: 72px 5vw;
+  }
+
+  .hero {
+    padding: 100px 5vw 160px;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 9vw, 3rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Stats in a tight row — padding reduced but hairline dividers kept. */
+  .hero-stats {
+    bottom: 36px;
+  }
+
+  .stat-item {
+    padding-right: 16px;
+  }
+
+  .stat-item + .stat-item {
+    padding-left: 16px;
+  }
+
+  .stat-num {
+    font-size: 2rem;
+  }
+
+  .stat-num span {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Form two-column row collapses to single column on mobile. */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    padding: 72px 5vw;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Disable card hover lift on touch — no hover intent on mobile. */
+  .specialty-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .specialty-card:hover::before {
+    transform: scaleX(0);
+  }
+}
