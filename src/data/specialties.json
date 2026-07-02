@@ -1,0 +1,46 @@
+{
+  "eyebrow": "Áreas de atención",
+  "title": {
+    "normal": "Especialidades",
+    "italic": "neurológicas"
+  },
+  "subtitle": "Atención integral con tecnología de diagnóstico avanzado y tratamiento personalizado para cada paciente.",
+  "items": [
+    {
+      "id": "migraine",
+      "icon": "migraine",
+      "title": "Cefalea y Migraña",
+      "description": "Diagnóstico diferencial y plan terapéutico personalizado para el control de la migraña crónica, cefalea en racimos y otras cefalalgias primarias."
+    },
+    {
+      "id": "epilepsy",
+      "icon": "epilepsy",
+      "title": "Epilepsia",
+      "description": "Evaluación, clasificación de crisis epilépticas y ajuste de tratamiento antiepiléptico con seguimiento continuo para mejorar la calidad de vida."
+    },
+    {
+      "id": "ms",
+      "icon": "ms",
+      "title": "Esclerosis Múltiple",
+      "description": "Diagnóstico temprano y manejo con terapias modificadoras de la enfermedad, coordinación multidisciplinaria y soporte continuo al paciente y familia."
+    },
+    {
+      "id": "dementia",
+      "icon": "dementia",
+      "title": "Demencias y Alzheimer",
+      "description": "Valoración neuropsicológica, diagnóstico temprano del deterioro cognitivo y orientación integral a familiares en el manejo del paciente."
+    },
+    {
+      "id": "neuropathy",
+      "icon": "neuropathy",
+      "title": "Neuropatías Periféricas",
+      "description": "Evaluación clínica y neurofisiológica de neuropatías diabéticas, compresivas y hereditarias con tratamiento sintomático integral."
+    },
+    {
+      "id": "parkinson",
+      "icon": "parkinson",
+      "title": "Parkinson y Movimientos",
+      "description": "Diagnóstico y manejo de la enfermedad de Parkinson, temblor esencial y distonías con enfoque multidisciplinario y tratamiento actualizado."
+    }
+  ]
+}
