@@ -482,6 +482,35 @@
   font-weight: 500;
 }
 
+/* ── Perfil — additions ──────────────────────────────────────────────────── */
+
+/* Wrapper for the photo frame + floating badge.
+   position: relative is required for the badge's absolute positioning. */
+.about-visual {
+  position: relative;
+}
+
+/* Synapse watermark inside the photo frame.
+   Color inherits from the frame's blue-pale palette.
+   When a real photo is added, set display: none on this element. */
+.perfil-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  color: var(--blue-light);
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* Bio paragraphs: margin handled here so the about-text p rule
+   in sections.css (margin-bottom: 14px) applies cleanly. */
+.about-bio {
+  margin-bottom: 4px;
+}
+
 /* ── Proceso ─────────────────────────────────────────────────────────────── */
 
 /* 4-column grid for the 4 process steps.

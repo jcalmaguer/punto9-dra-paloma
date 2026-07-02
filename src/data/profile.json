@@ -1,0 +1,21 @@
+{
+  "initials":   "PD",
+  "credential":  "Neuróloga Certificada · Consejo Mexicano de Neurología",
+  "badge": {
+    "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey",
+    "degree":       "Doctorado · Neurociencias"
+  },
+  "title": {
+    "italic": "Comprometida",
+    "normal": "con su bienestar"
+  },
+  "bio": [
+    "Soy la Dra. Paloma Durán Botello, neuróloga clínica con más de 3 años de experiencia en el diagnóstico y tratamiento de enfermedades del sistema nervioso central y periférico.",
+    "Mi filosofía de atención se centra en el paciente como persona: escuchar, comprender y acompañar en cada etapa del proceso de salud, siempre apoyada en medicina basada en evidencia y en los últimos avances en neurociencias."
+  ],
+  "credentials": [
+    { "title": "Doctorado en Neurociencias",  "detail": "Universidad Nacional Autónoma de México ([escuela])" },
+    { "title": "Especialidad en Neurología",  "detail": "Instituto Nacional de Neurología y Neurocirugía"     }
+  ],
+  "cta": { "label": "Agendar mi primera consulta →", "href": "#contacto" }
+}
