@@ -1012,3 +1012,18 @@ footer {
     transform: scaleX(0);
   }
 }
+
+/* ── Testimonios ─────────────────────────────────────────────────────────── */
+
+/* 3-column grid on desktop.
+   minmax(300px, 1fr): cards never go below 300px — quotes need
+   enough width to breathe without awkward line breaks.
+   Cards use flex-direction: column internally so the author footer
+   always anchors to the bottom regardless of quote length. */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: start; /* cards don't stretch to equal height — intentional.
+                         unequal heights feel more authentic, less templated. */
+}

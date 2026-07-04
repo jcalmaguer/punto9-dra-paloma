@@ -1,0 +1,33 @@
+{
+  "eyebrow":      "Testimonios",
+  "title": {
+    "italic": "Lo que dicen",
+    "normal": "mis pacientes"
+  },
+  "testimonials": [
+    {
+      "initials": "MG",
+      "name":    "María García",
+      "condition": "Paciente con migraña",
+      "details":   "Paciente con migraña · 3 años en tratamiento",
+      "quote":     "La Dra. Durán fue la primera médica que realmente escuchó todos mis síntomas. Gracias a su diagnóstico preciso, por fin pude controlar mis migrañas después de años de sufrimiento.",            
+      "rating": 5
+    },
+    {
+      "initials": "RL",
+      "name":    "Roberto López",
+      "condition": "Familiar de paciente con Parkinson",
+      "details":   "Familiar de paciente con Parkinson",
+      "quote":     "Profesionalismo, empatía y trato humano. La doctora explicó con claridad el diagnóstico de mi padre con Parkinson y nos dio herramientas para acompañarlo en esta etapa.",            
+      "rating": 5
+    },
+    {
+      "initials": "CA",      
+      "name":    "Claudia Arroyo",
+      "condition": "Paciente con epilepsia",
+      "details":   "Paciente con epilepsia · 2 años de seguimiento",
+      "quote":     "Después de años de crisis epilépticas sin control, la Dra. Paloma ajustó mi tratamiento y llevo 18 meses sin una sola crisis. Mi vida cambió completamente.",      
+      "rating": 5
+    }
+  ]
+}

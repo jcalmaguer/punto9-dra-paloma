@@ -663,3 +663,168 @@ nav {
   margin: 14px auto 0;
   line-height: 1.72;
 }
+
+/* ── Testimonial cards ───────────────────────────────────────────────────── */
+
+/* The most powerful trust signal on the page.
+   Clean white with a very subtle shadow at rest — honest and undecorated.
+   The content (patient words) is the hero, not the card styling.
+   overflow: hidden clips the decorative quotation mark ::before. */
+.testi-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 30px 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition:
+    transform  0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.testi-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 40px rgba(11, 37, 69, 0.08),
+    0  4px 12px rgba(11, 37, 69, 0.04);
+}
+
+/* Decorative quotation mark: large background watermark.
+   Brand blue at 6% opacity — editorial reference to academic publications.
+   font-size at 10rem ensures it fills the top-left corner without
+   competing with the actual quote text. */
+.testi-card::before {
+  content: '\201C'; /* left double quotation mark */
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--blue-light);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Stars row: left-aligned, with numeric rating.
+   Gold color is intentional — patients read gold stars as quality/excellence,
+   distinct from interactive brand-blue elements. */
+.testi-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.star {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.star--filled  { color: var(--gold); }
+.star--empty   { color: var(--border); }
+
+/* Numeric rating: clinical precision signal.
+   "5.0" reads as a measured score, not just decorative stars. */
+.testi-rating-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-left: 6px;
+}
+
+/* Quote: italic blockquote.
+   The condition pill lives inside the blockquote —
+   placed before the quote text so it catches the eye first,
+   letting patients self-identify before reading the full story. */
+.testi-quote {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.91rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.78;
+  margin: 0 0 24px;
+  flex: 1; /* pushes the author footer to the bottom of the card */
+}
+
+/* Condition pill: the key neurological UX decision.
+   A patient with epilepsy sees "Epilepsia" and self-identifies
+   before reading a single word of the quote. Placed inline,
+   before the opening quote, so it reads naturally as context. */
+.testi-condition {
+  display: inline-block;
+  font-style: normal;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  background: var(--blue-mist);
+  border: 1px solid var(--blue-pale);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-right: 8px;
+  /* Sits on the same line as the opening quote character */
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* Author row: avatar + name + detail stacked */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* Avatar circle: gradient from pale to mist — warmer than a flat color.
+   The initials in --blue-mid read clearly against the light background. */
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-pale), var(--blue-mist));
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blue-mid);
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+.testi-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testi-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+/* Treatment duration or relationship context.
+   Specificity here is a credibility signal — "3 años en tratamiento"
+   is far more convincing than a generic patient label. */
+.testi-info {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
