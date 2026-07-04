@@ -1,0 +1,27 @@
+{
+  "eyebrow": "¿Cómo funciona?",
+  "title": "Tu camino hacia el",
+  "italicTitle": "bienestar",
+  "ProcessSteps": [
+    {
+      "number": 1,
+      "title": "Agenda tu cita",
+      "description": "Por WhatsApp, teléfono o formulario. Confirmación rápida en menos de 24 horas."
+    },
+    {
+      "number": 2,
+      "title": "Primera consulta",
+      "description": "Historia clínica completa, exploración neurológica y revisión de estudios previos."
+    },
+    {
+      "number": 3,
+      "title": "Diagnóstico",
+      "description": "Estudios especializados si se requieren: EEG, EMG, resonancia magnética o tomografía."
+    },
+    {
+      "number": 4,
+      "title": "Plan de tratamiento",
+      "description": "Estrategia terapéutica personalizada con seguimiento periódico y comunicación directa."
+    }
+  ]
+}

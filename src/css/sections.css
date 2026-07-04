@@ -513,72 +513,168 @@
 
 /* ── Proceso ─────────────────────────────────────────────────────────────── */
 
-/* 4-column grid for the 4 process steps.
-   The horizontal connector line is drawn with ::before on the container —
-   one element, no JS, no SVG, no extra markup. */
+/* Card-based layout: each step is a self-contained white card on cream.
+   The connector arrows between cards replace the fragile ::before line —
+   no pixel-math offsets, no breakpoint recalculations when icons change. */
 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
+  align-items: stretch;
+}
+
+/* Individual step card: white on cream creates the same contrast logic
+   as specialty cards. Subtle left border in brand blue signals progression —
+   the patient's eye follows the blue edge downward through each step. */
+.step-card {
   position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue-light);
+  border-radius: 16px;
+  padding: 28px 24px 32px;
+  margin-right: 28px;  /* space for the connector arrow */
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-/* Connector line: spans from the center of step 1 to the center of step 4.
-   calc(12.5% + 27px): 12.5% is half of one column (1/8 of the grid),
-   + 27px is half of the 54px step circle — lands exactly at center.
-   z-index 0 keeps it behind the number circles (z-index 1). */
-.process-steps::before {
-  content: '';
-  position: absolute;
-  top: 27px;
-  left: calc(12.5% + 27px);
-  right: calc(12.5% + 27px);
-  height: 1px;
-  background: var(--border);
-  z-index: 0;
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(11, 37, 69, 0.08);
 }
 
-.step-item {
-  text-align: center;
-  padding: 0 18px;
-  position: relative;
-  z-index: 1;
+/* Last card has no right margin — no connector after it. */
+.step-card--last {
+  margin-right: 0;
 }
 
-/* Step number circle: navy fill with a white inner border and a brand-blue
-   outer ring (via box-shadow). The layered border signals "milestone" —
-   the patient understands this is a numbered sequence, not a bullet list. */
-.step-num {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: var(--white);
+/* ── Card header: number (left) + icon (right) ───────────────────────── */
+
+.step-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Step number: large brand-blue numeral — the first thing the eye lands on.
+   Cormorant Garamond for typographic consistency with the rest of the page. */
+.step-card__number {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
+  font-size: 2.8rem;
   font-weight: 500;
+  line-height: 1;
+  color: var(--blue-light);
+  letter-spacing: -0.02em;
+  /* Optical offset: aligns the numeral baseline with the icon center */
+  margin-top: -4px;
+}
+
+/* Icon container: mist background, right-aligned.
+   Smaller than specialty card icons (40px vs 52px) — the number is
+   the primary visual anchor here, not the icon. */
+.step-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--blue-mist);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 18px;
-  border: 3px solid var(--white);
-  box-shadow: 0 0 0 1px var(--border);
+  flex-shrink: 0;
+  transition: background 0.25s ease;
 }
 
-.step-item h4 {
+.step-card:hover .step-card__icon {
+  background: var(--blue-pale);
+}
+
+.step-card__icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--blue-light);
+}
+
+/* ── Card text ───────────────────────────────────────────────────────── */
+
+.step-card__title {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.3;
 }
 
-.step-item p {
+.step-card__desc {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.81rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
-  line-height: 1.65;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Connector arrow between cards ──────────────────────────────────── */
+
+/* Absolutely positioned in the gap between this card and the next.
+   Centered vertically on the card.
+   Hidden on .step-card--last via display: none. */
+.step-card__connector {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.step-card__connector svg {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-light);
+  opacity: 0.5;
+}
+
+.step-card--last .step-card__connector {
+  display: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* In 2-col grid: remove right margin/connector on even cards */
+  .step-card {
+    margin-right: 0;
+  }
+
+  .step-card__connector {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step-card {
+    padding: 24px 20px;
+  }
+
+  /* On mobile: horizontal layout — number and icon side by side,
+     with title and description below. More compact vertical rhythm. */
+  .step-card__number {
+    font-size: 2.2rem;
+  }
 }
 
 /* ── Testimonios ─────────────────────────────────────────────────────────── */
