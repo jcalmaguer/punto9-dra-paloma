@@ -3,3 +3,4 @@ export type { HeroTitle, HeroLink, HeroCta, HeroPhoto, HeroStat, HeroData } from
 export type { SpecialtyItem, SpecialtiesData } from './specialties'
 export type { ProfileBadge, ProfileCredential, ProfileTitle, ProfileCta, ProfileData } from './profile'
 export type { ProcessStep, ProcessData } from './process'
+export type { TestimonialData, TestimonialItem, TestimonialTitle } from './testimonials'
