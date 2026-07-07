@@ -1,0 +1,38 @@
+{
+  "name":       "Dra. Paloma Durán Botello",
+  "specialty": "Neurología Clínica",
+  "description":  "Atención neurológica integral con enfoque humano y científico. Irapuato, Guanajuato.",
+  "cedula":       "15382046",
+  "columns": [
+    {
+      "title": "Especialidades",
+      "links": [
+        { "text": "Cefalea y Migraña",   "href": "#especialidades" },
+        { "text": "Epilepsia",           "href": "#especialidades" },
+        { "text": "Esclerosis Múltiple", "href": "#especialidades" },
+        { "text": "Demencias",           "href": "#especialidades" },
+        { "text": "Parkinson",           "href": "#especialidades" }
+      ]
+    },
+    {
+      "title": "Información",
+      "links": [
+        { "text": "Sobre la Dra. Paloma", "href": "#perfil"    },
+        { "text": "Primera consulta",     "href": "#proceso"   },
+        { "text": "Convenios y seguros",  "href": "#contacto"  },
+        { "text": "Aviso de privacidad",  "href": "#"          }
+      ]
+    },
+    {
+      "title": "Contacto",
+      "links": [
+        { "text": "+52 (462) 147-3525",         "href": "#"                        },
+        { "text": "contacto@drapaloma.mx",      "href": "#"                        },
+        { "text": "Calle Dr. Javier Castellanos Coutiño, #516 Colonia San Pedro, Irapuato Gto. C.P. 36520", "href": "#" }
+      ]
+    }
+  ],
+  "social": [
+  ],
+  "copyright": "© 2026 Dra. Paloma Durán. Todos los derechos reservados."
+}
