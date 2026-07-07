@@ -1,5 +1,5 @@
 {
-  "badge": "Médica Neuróloga · Certificada [escuela]",
+  "badge": "Médica Neuróloga · Certificada CONACEM #1387",
   "title": {
     "italic": "Dra. Paloma",
     "normal": "Durán Botello"
@@ -8,16 +8,17 @@
   "description": "Diagnóstico y tratamiento integral de enfermedades del sistema nervioso con un enfoque humano, preciso y basado en evidencia científica de vanguardia.",
   "cta": {
     "primary":  { "label": "Agendar consulta", "href": "#contacto" },
-    "whatsapp": { "label": "WhatsApp",         "href": "https://wa.me/5255000000" }
+    "whatsapp": { "label": "WhatsApp",         "href": "https://wa.me/524621473525" }
   },
   "photo": {
     "initials": "PD",
     "name":     "Dra. Paloma Durán",
-    "license":  "Neuróloga · Cédula [número]"
+    "license":  "Neuróloga · Cédula 15382046"
   },
   "stats": [
-    { "value": "[n]", "suffix": "+", "label": "Años de experiencia" },
+    { "value": "8", "suffix": "+", "label": "Años de experiencia como médica Cirujana" },
+    { "value": "6", "suffix": "+", "label": "Años de experiencia como neuróloga" },
     { "value": "4",   "suffix": "k", "label": "Pacientes atendidos"  },
-    { "value": "98",  "suffix": "%", "label": "Satisfacción"         }
+    { "value": "100",  "suffix": "%", "label": "Satisfacción"         }
   ]
 }

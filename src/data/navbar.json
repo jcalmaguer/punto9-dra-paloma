@@ -1,10 +1,10 @@
 {
   "brand": {
     "name":      "Dra. Paloma Montiel",
-    "specialty": "Neurología Clínica"
+    "specialty": "Especialidad en Neurología"
   },
   "links": [
-    { "label": "Especialidades", "href": "#specialties" },
+    { "label": "Especialidades", "href": "#especialidades" },
     { "label": "Perfil",         "href": "#perfil"         },
     { "label": "Proceso",        "href": "#proceso"        },
     { "label": "Testimonios",    "href": "#testimonios"    }

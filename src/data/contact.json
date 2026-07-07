@@ -7,8 +7,8 @@
     {
       "icon":  "phone",
       "label": "Teléfono / WhatsApp",
-      "value": "+52 (462) 123-4567",
-      "href":  "tel:+524621234567"
+      "value": "+52 (462) 147-3525",
+      "href":  "tel:+524621473525"
     },
     {
       "icon":  "email",
@@ -19,7 +19,7 @@
     {
       "icon":  "location",
       "label": "Consultorio",
-      "value": "Calle Insurgentes 204, Col. Centro, Irapuato, Guanajuato"
+      "value": "Calle Dr. Javier Castellanos Coutiño, #516 Colonia San Pedro, Irapuato Gto. C.P. 36520"
     },
     {
       "icon":  "clock",
@@ -29,7 +29,7 @@
   ],
   "whatsapp": {
     "label":    "Escribir por WhatsApp",
-    "href":     "https://wa.me/524621234567",
+    "href":     "https://wa.me/524621473525",
     "sublabel": "Respuesta en menos de 2 horas"
   },
   "reassurance": {
