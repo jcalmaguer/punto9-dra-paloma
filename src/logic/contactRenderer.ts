@@ -130,8 +130,8 @@ export function renderContact(data: ContactData): string {
                Phone and email are clickable anchors on mobile. -->
           <div class="contact-details">
             ${data.details.map(renderDetail).join('')}
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.7805406658663!2d-101.3715106!3d20.678505599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842c7fb0b5372fe9%3A0xa9c4bf6192c41153!2sDr.%20Javier%20Castellanos%20Couti%C3%B1o%20516%2C%20San%20Pedro%2C%2036520%20Irapuato%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1783466764418!5m2!1ses-419!2smx" width="400" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
-
           <!-- WhatsApp CTA: prominent alternative to the form.
                For patients who are mobile-first or prefer async chat. -->
           <a href="${data.whatsapp.href}"
