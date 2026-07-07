@@ -1,0 +1,54 @@
+{
+  "eyebrow":     "Contacto",
+  "title":       "¿Tienes preguntas?",
+  "titleItalic": "Escríbeme",
+  "description": "Agenda tu consulta o resuelve tus dudas. También puedes escribirme directamente por WhatsApp para atención inmediata.",
+  "details": [
+    {
+      "icon":  "phone",
+      "label": "Teléfono / WhatsApp",
+      "value": "+52 (462) 123-4567",
+      "href":  "tel:+524621234567"
+    },
+    {
+      "icon":  "email",
+      "label": "Correo electrónico",
+      "value": "contacto@drapalomadurán.mx",
+      "href":  "mailto:contacto@drapalomadurán.mx"
+    },
+    {
+      "icon":  "location",
+      "label": "Consultorio",
+      "value": "Calle Insurgentes 204, Col. Centro, Irapuato, Guanajuato"
+    },
+    {
+      "icon":  "clock",
+      "label": "Horario de atención",
+      "value": "Lunes – Viernes: 9:00 – 18:00 hrs"
+    }
+  ],
+  "whatsapp": {
+    "label":    "Escribir por WhatsApp",
+    "href":     "https://wa.me/524621234567",
+    "sublabel": "Respuesta en menos de 2 horas"
+  },
+  "reassurance": {
+    "responseTime": "Primera respuesta garantizada en menos de 24 horas hábiles.",
+    "privacy":      "Tus datos clínicos son confidenciales y se manejan conforme a la NOM-024-SSA3 de expediente clínico electrónico."
+  },
+  "form": {
+    "title":       "Solicitar consulta",
+    "subtitle":    "Te contactaremos para confirmar fecha y hora",
+    "submitLabel": "Enviar solicitud",
+    "legal":       "Al enviar este formulario aceptas el manejo confidencial de tus datos con fines médicos, conforme a nuestra Política de Privacidad.",
+    "motivos": [
+      "Cefalea o Migraña",
+      "Epilepsia",
+      "Esclerosis Múltiple",
+      "Demencia / Alzheimer",
+      "Parkinson / Movimientos anormales",
+      "Neuropatía periférica",
+      "Otro padecimiento neurológico"
+    ]
+  }
+}

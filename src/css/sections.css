@@ -1027,3 +1027,306 @@ footer {
   align-items: start; /* cards don't stretch to equal height — intentional.
                          unequal heights feel more authentic, less templated. */
 }
+
+/* ── Contacto ────────────────────────────────────────────────────────────── */
+
+/* Returns to navy after white Testimonios — bookends the page visually.
+   The patient is "back in the doctor's space" at the moment of commitment. */
+.contact-section {
+  background: var(--navy);
+  padding: 100px 6vw;
+}
+
+/* Asymmetric grid: form column is 30% wider — the primary action
+   deserves more real estate than the info column. */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ── Info column ─────────────────────────────────────────────────────────── */
+
+/* Eyebrow on dark background uses --blue-accent for contrast.
+   The default .eyebrow uses --blue-light which is too dark on navy. */
+.contact-eyebrow {
+  color: var(--blue-accent);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.contact-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.contact-info h2 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--blue-accent);
+}
+
+.contact-info > p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.76;
+  margin-bottom: 36px;
+  max-width: 380px;
+}
+
+/* ── Contact detail items ────────────────────────────────────────────────── */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+/* Base item: row with icon + text.
+   align-items: flex-start handles multi-line values (address) correctly. */
+.contact-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* Clickable variant: phone and email become anchors.
+   text-decoration none + color inherit keeps them visually consistent
+   while gaining the accessibility and mobile affordance of a real link. */
+.contact-item--link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.contact-item--link:hover {
+  opacity: 0.85;
+}
+
+/* Icon container: brand blue at 18% opacity on navy.
+   --blue-accent stroke ensures the icon is visible against the tinted bg. */
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(1, 146, 229, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--blue-accent);
+  flex-shrink: 0;
+}
+
+.contact-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+/* Label: small-caps uppercase — clinical data label style. */
+.c-strong {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.2;
+}
+
+/* Value: readable white, slightly smaller than body. */
+.c-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.45;
+}
+
+/* ── WhatsApp CTA in info column ─────────────────────────────────────────── */
+
+/* Full-width green block — immediately recognizable as WhatsApp.
+   Deliberately different from the form's primary CTA to signal:
+   "this is a different, faster channel." */
+.contact-wa-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.contact-wa-cta:hover {
+  background: rgba(37, 211, 102, 0.2);
+  border-color: rgba(37, 211, 102, 0.45);
+}
+
+.contact-wa-cta__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-wa-cta__icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.contact-wa-cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-wa-cta__text strong {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #25D366;
+  line-height: 1.3;
+}
+
+.contact-wa-cta__text small {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.3;
+}
+
+/* ── Reassurance block ───────────────────────────────────────────────────── */
+
+/* Two micro-trust signals at the bottom of the info column:
+   1. Response time — answers "will they reply?"
+   2. Privacy note — answers "are my clinical data safe?" */
+.contact-reassurance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-reassurance__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.55;
+}
+
+/* Dot indicator for response time — signals "live/active" status */
+.contact-reassurance__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25D366;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.contact-reassurance__icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.contact-reassurance__icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Form column ─────────────────────────────────────────────────────────── */
+
+/* Glassmorphism panel: translucent on navy.
+   The very slight blur and border separate it from the background
+   without breaking the dark cohesion of the section. */
+.contact-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 44px 40px;
+}
+
+.form-heading {
+  margin-bottom: 32px;
+}
+
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.form-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.4;
+}
+
+/* Optional field marker — reduces the sense that everything is required */
+.form-optional {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .contact-info > p {
+    max-width: 100%;
+  }
+
+  .contact-section {
+    padding: 80px 6vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 72px 5vw;
+  }
+
+  .contact-form {
+    padding: 32px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
