@@ -24,9 +24,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 6vw;
-  background: rgba(11, 37, 69, 0.97);
+  background: #06172B;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -228,6 +227,14 @@ nav {
   transform: scaleX(1);
 }
 
+.card-title{
+  text-align: justify;
+}
+
+.card-desc{
+  text-align: justify;
+}
+
 /* Icon container: rounded square in the lightest brand tint.
    Size and radius are calibrated so the SVG sits centered with
    4px of visual breathing room on each side (52px - 25px svg) / 2. */
@@ -275,78 +282,6 @@ nav {
   color: var(--text-muted);
   line-height: 1.72;
   margin: 0;
-}
-
-/* ── Testimonial cards ───────────────────────────────────────────────────── */
-
-/* Testimonials are the most powerful trust signal on a medical website.
-   The card must feel honest and human — no gradients, no glow effects.
-   Clean white, subtle border, the patient's words centered as the hero. */
-.testi-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 30px;
-}
-
-/* Stars: gold, not brand blue — gold reads universally as "rating"
-   and avoids visual confusion with interactive brand elements. */
-.testi-stars {
-  color: var(--gold);
-  font-size: 0.82rem;
-  letter-spacing: 2px;
-  margin-bottom: 14px;
-}
-
-/* Quote: italic + muted color signals "these are someone else's words."
-   Line-height 1.75 for comfortable, unhurried reading. */
-.testi-quote {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.91rem;
-  font-style: italic;
-  color: var(--text-muted);
-  line-height: 1.75;
-  margin-bottom: 20px;
-}
-
-/* Author row: avatar initials + name + condition detail */
-.testi-author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Avatar circle: brand pale blue — warm but clinical.
-   Initials in --blue-mid keep the text readable without being harsh. */
-.testi-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--blue-pale);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.73rem;
-  font-weight: 500;
-  color: var(--blue-mid);
-  flex-shrink: 0;
-}
-
-.testi-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.3;
-}
-
-/* Condition and treatment duration — secondary but valuable context. */
-.testi-info {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.4;
 }
 
 /* ── Contact form ─────────────────────────────────────────────────────────── */
@@ -541,6 +476,22 @@ nav {
 .s-li  { background: rgba(10, 102, 194, 0.10); border-color: rgba(10, 102, 194, 0.22); color: #0A66C2; }
 .s-li:hover  { background: rgba(10, 102, 194, 0.20); }
 
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
 /* ── Floating WhatsApp button ────────────────────────────────────────────── */
 
 /* Persistent across all sections — for any patient at any scroll depth
@@ -719,6 +670,7 @@ nav {
   align-items: center;
   gap: 2px;
   margin-bottom: 16px;
+  justify-content: flex-end;
 }
 
 .star {
@@ -750,6 +702,7 @@ nav {
   color: var(--text-muted);
   line-height: 1.78;
   margin: 0 0 24px;
+  text-align: justify;
   flex: 1; /* pushes the author footer to the bottom of the card */
 }
 
@@ -827,4 +780,5 @@ nav {
   font-size: 0.75rem;
   color: var(--text-muted);
   line-height: 1.3;
+  text-align: justify;
 }

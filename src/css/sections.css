@@ -160,6 +160,7 @@
   color: rgba(255, 255, 255, 0.62);
   max-width: 480px;
   margin-bottom: 42px;
+  text-align: justify;
 }
 
 .hero-actions {
@@ -334,6 +335,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
+  margin: 22px;
 }
 
 /* ── Perfil / About ──────────────────────────────────────────────────────── */
@@ -389,6 +391,7 @@
   border-radius: 14px;
   padding: 18px 22px;
   text-align: center;
+  z-index: 10;
 }
 
 .about-badge strong {
@@ -488,6 +491,9 @@
    position: relative is required for the badge's absolute positioning. */
 .about-visual {
   position: relative;
+  display: inline-block;
+  max-width: 380px;
+  width: 100%;
 }
 
 /* Synapse watermark inside the photo frame.
@@ -509,6 +515,7 @@
    in sections.css (margin-bottom: 14px) applies cleanly. */
 .about-bio {
   margin-bottom: 4px;
+  text-align: justify;
 }
 
 /* ── Proceso ─────────────────────────────────────────────────────────────── */
@@ -677,17 +684,6 @@
   }
 }
 
-/* ── Testimonios ─────────────────────────────────────────────────────────── */
-
-/* Same auto-fit pattern as cards-grid but with a wider minimum.
-   290px minimum keeps testimonials from becoming too narrow to read
-   the quote comfortably. */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 22px;
-}
-
 /* ── Contacto ────────────────────────────────────────────────────────────── */
 
 /* Returns to navy after the white testimonials section — the color rhythm
@@ -831,6 +827,7 @@ footer {
   line-height: 1.68;
   margin-top: 12px;
   max-width: 230px;
+  text-align: justify;
 }
 
 /* Column headings: same eyebrow treatment as section headers —
@@ -1024,8 +1021,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
-  align-items: start; /* cards don't stretch to equal height — intentional.
-                         unequal heights feel more authentic, less templated. */
+  align-items: stretch;
 }
 
 /* ── Contacto ────────────────────────────────────────────────────────────── */
