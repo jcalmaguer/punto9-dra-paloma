@@ -5,3 +5,4 @@ export type { ProfileBadge, ProfileCredential, ProfileTitle, ProfileCta, Profile
 export type { ProcessStep, ProcessData } from './process'
 export type { TestimonialData, TestimonialItem, TestimonialTitle } from './testimonials'
 export type { ContactData, ContactForm, ContactWhatsApp, ContactReassurance, ContactDetail } from './contact'
+export type { FooterData, FooterLink, FooterSocial, FooterColumn } from './footer'
