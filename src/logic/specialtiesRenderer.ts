@@ -67,7 +67,7 @@ function renderCard(item: SpecialtyItem): string {
 
 export function renderSpecialties(data: SpecialtiesData): string {
   return `
-    <section class="specialties">
+    <section class="section section-cream" id="especialidades">
 
       <header class="section-header">
         <span class="eyebrow">${data.eyebrow}</span>
