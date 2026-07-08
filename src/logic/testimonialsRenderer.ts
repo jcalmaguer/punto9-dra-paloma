@@ -32,18 +32,19 @@ function renderCard(item: TestimonialItem): string {
            with a specific neurological diagnosis at a glance. -->
       <blockquote class="testi-quote">
         <span class="testi-condition">${item.condition}</span>
+        <br>
         "${item.quote}"
       </blockquote>
 
       <!-- footer: author attribution inside an article is semantically
            correct per the HTML spec. -->
-      <footer class="testi-author">
+      <div class="testi-author">
         <div class="testi-avatar" aria-hidden="true">${item.initials}</div>
         <div class="testi-meta">
           <div class="testi-name">${item.name}</div>
           <div class="testi-info">${item.details}</div>
         </div>
-      </footer>
+      </div>
 
     </article>
   `
@@ -56,7 +57,7 @@ export function renderTestimonials(data: TestimonialData): string {
       <header class="section-header">
         <span class="eyebrow">${data.eyebrow}</span>
         <h2 class="section-title">
-          ${data.title.normal} <em>${data.title.italic}</em>
+          ${data.title.italic} <em>${data.title.normal}</em>
         </h2>
         <div class="divider"></div>
       </header>
