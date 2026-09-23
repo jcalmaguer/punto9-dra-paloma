@@ -1,0 +1,117 @@
+{
+  "items": [
+    {
+      "id": "migraine",
+      "overview": "La migraña y otras cefaleas primarias afectan de forma significativa la calidad de vida cuando no se diagnostican y tratan adecuadamente. Un abordaje neurológico especializado permite diferenciar los distintos tipos de cefalea e identificar los factores que desencadenan las crisis, para diseñar un plan terapéutico realista y sostenible.",
+      "symptoms": [
+        "Dolor pulsátil, generalmente de un solo lado de la cabeza",
+        "Náusea o vómito durante las crisis",
+        "Sensibilidad a la luz (fotofobia) y al sonido (fonofobia)",
+        "Aura visual o sensorial previa al dolor en algunos casos",
+        "Cefaleas que aumentan en frecuencia o intensidad con el tiempo",
+        "Dolor que interfiere con las actividades diarias"
+      ],
+      "whenToConsult": "Es momento de buscar valoración neurológica si las crisis se presentan más de cuatro veces al mes, si el dolor no responde a los analgésicos habituales, o si aparece un dolor de cabeza súbito e inusualmente intenso.",
+      "approach": "El tratamiento inicia con una historia clínica detallada para identificar el tipo de cefalea y sus desencadenantes. A partir de ahí se define un plan que puede incluir tratamiento agudo para las crisis, terapia preventiva cuando es necesaria, y recomendaciones de hábitos que reducen la frecuencia de los episodios.",
+      "faqs": [
+        { "question": "¿La migraña tiene cura?", "answer": "La migraña es una condición crónica que se controla, no necesariamente se \"cura\". Con un plan de tratamiento adecuado, la mayoría de los pacientes logra reducir de forma importante la frecuencia e intensidad de sus crisis." },
+        { "question": "¿Necesito estudios de imagen para el diagnóstico?", "answer": "No siempre. El diagnóstico de migraña es principalmente clínico. Los estudios de imagen se reservan para casos con datos de alarma o presentaciones atípicas." },
+        { "question": "¿Cuánto tiempo toma ver mejoría con el tratamiento preventivo?", "answer": "La mayoría de los tratamientos preventivos requieren de 8 a 12 semanas para valorar su efecto completo, por lo que el seguimiento continuo es parte esencial del proceso." }
+      ]
+    },
+    {
+      "id": "epilepsy",
+      "overview": "La epilepsia es una condición neurológica caracterizada por la tendencia a presentar crisis epilépticas recurrentes. Un diagnóstico preciso del tipo de crisis y del síndrome epiléptico es la base para elegir el tratamiento antiepiléptico más adecuado y mejorar el control a largo plazo.",
+      "symptoms": [
+        "Episodios de pérdida o alteración del estado de alerta",
+        "Movimientos involuntarios o rigidez muscular durante las crisis",
+        "Sensaciones extrañas previas al episodio (aura)",
+        "Confusión o cansancio posterior a la crisis",
+        "Crisis que se repiten sin una causa aguda identificable"
+      ],
+      "whenToConsult": "Cualquier evento sugestivo de una primera crisis convulsiva amerita valoración neurológica. También es importante consultar si las crisis cambian de patrón, aumentan en frecuencia, o si el tratamiento actual no logra un control adecuado.",
+      "approach": "La evaluación incluye una historia clínica detallada de los episodios, apoyada cuando es necesario en estudios como electroencefalograma e imagen cerebral. El tratamiento antiepiléptico se individualiza según el tipo de crisis, edad, comorbilidades y planes de vida del paciente, con seguimiento continuo para ajustar la dosis y minimizar efectos secundarios.",
+      "faqs": [
+        { "question": "¿Una sola crisis significa que tengo epilepsia?", "answer": "No necesariamente. El diagnóstico de epilepsia requiere, en general, más de una crisis no provocada, o una crisis con un riesgo elevado de recurrencia. Cada caso se evalúa de forma individual." },
+        { "question": "¿El tratamiento es de por vida?", "answer": "Depende del tipo de epilepsia y del tiempo libre de crisis. En algunos casos, después de varios años sin eventos, es posible valorar de forma cuidadosa la reducción o suspensión del tratamiento." },
+        { "question": "¿Puedo llevar una vida normal con epilepsia?", "answer": "La mayoría de las personas con epilepsia bien controlada llevan una vida plena. El plan de tratamiento también contempla recomendaciones de seguridad y estilo de vida." }
+      ]
+    },
+    {
+      "id": "ms",
+      "overview": "La esclerosis múltiple es una enfermedad autoinmune que afecta el sistema nervioso central. El diagnóstico y tratamiento tempranos, junto con las terapias modificadoras de la enfermedad disponibles actualmente, permiten reducir la actividad de la enfermedad y preservar la función neurológica a largo plazo.",
+      "symptoms": [
+        "Alteraciones visuales, como visión borrosa o doble",
+        "Debilidad o entumecimiento en alguna extremidad",
+        "Fatiga desproporcionada a la actividad realizada",
+        "Problemas de equilibrio o coordinación",
+        "Alteraciones en el control de esfínteres",
+        "Síntomas que aparecen en brotes y luego mejoran parcial o totalmente"
+      ],
+      "whenToConsult": "Se recomienda valoración neurológica ante síntomas neurológicos que se instalan en días y persisten más de 24 horas, especialmente si involucran la visión, la fuerza o la sensibilidad, y no tienen otra explicación evidente.",
+      "approach": "El abordaje combina resonancia magnética, estudios de laboratorio y, cuando es necesario, punción lumbar para confirmar el diagnóstico. Una vez establecido, se define la terapia modificadora de la enfermedad más adecuada según el perfil de actividad, y se da seguimiento periódico en coordinación con otras especialidades cuando el caso lo requiere.",
+      "faqs": [
+        { "question": "¿La esclerosis múltiple es hereditaria?", "answer": "No se hereda de forma directa, aunque existe una predisposición genética que, combinada con factores ambientales, puede aumentar el riesgo." },
+        { "question": "¿Qué es un brote?", "answer": "Un brote es la aparición de síntomas neurológicos nuevos, o el empeoramiento de síntomas previos, que dura más de 24 horas y no se explica por otra causa como fiebre o infección." },
+        { "question": "¿Las terapias modificadoras detienen por completo la enfermedad?", "answer": "Su objetivo es reducir la frecuencia de brotes y la actividad inflamatoria visible en resonancia, disminuyendo el riesgo de discapacidad acumulada a largo plazo." }
+      ]
+    },
+    {
+      "id": "dementia",
+      "overview": "El deterioro cognitivo y las demencias, incluida la enfermedad de Alzheimer, requieren una valoración cuidadosa que distinga entre cambios propios de la edad, deterioro cognitivo leve y demencia establecida. Un diagnóstico temprano permite iniciar intervenciones que ayudan a preservar la funcionalidad por más tiempo.",
+      "symptoms": [
+        "Olvidos frecuentes que afectan la vida diaria",
+        "Dificultad para encontrar palabras o seguir conversaciones",
+        "Desorientación en tiempo o lugar",
+        "Cambios en el juicio o la toma de decisiones",
+        "Cambios de personalidad o del estado de ánimo",
+        "Dificultad progresiva para realizar tareas antes habituales"
+      ],
+      "whenToConsult": "Es recomendable buscar valoración cuando los olvidos u otros cambios cognitivos son notados por el propio paciente o por familiares, y comienzan a interferir con actividades cotidianas, laborales o sociales.",
+      "approach": "La valoración neuropsicológica, junto con estudios de laboratorio e imagen cerebral, ayuda a identificar la causa del deterioro cognitivo y descartar condiciones tratables que lo simulan. A partir del diagnóstico se define un plan que incluye tratamiento farmacológico cuando aplica, estimulación cognitiva y orientación a la familia sobre el manejo del día a día.",
+      "faqs": [
+        { "question": "¿Olvidar cosas ocasionalmente es normal?", "answer": "Cierto grado de olvido ocasional puede ser parte del envejecimiento normal. La diferencia clave está en si los olvidos afectan la independencia y las actividades diarias de la persona." },
+        { "question": "¿El Alzheimer se puede prevenir?", "answer": "No existe una forma garantizada de prevenirlo, pero mantener actividad física, cognitiva y social, además de controlar factores de riesgo cardiovascular, se asocia con menor riesgo de deterioro cognitivo." },
+        { "question": "¿Qué papel tiene la familia en el tratamiento?", "answer": "Un papel central. Gran parte del plan de manejo incluye orientar a los familiares sobre estrategias de comunicación, seguridad en casa y manejo de los cambios conductuales." }
+      ]
+    },
+    {
+      "id": "neuropathy",
+      "overview": "Las neuropatías periféricas afectan los nervios que conectan el cerebro y la médula espinal con el resto del cuerpo. Pueden tener origen diabético, compresivo, hereditario o de otras causas, por lo que un diagnóstico preciso es clave para dirigir el tratamiento a la causa de fondo y aliviar los síntomas.",
+      "symptoms": [
+        "Hormigueo o adormecimiento en manos o pies",
+        "Dolor de tipo ardoroso o punzante",
+        "Debilidad muscular en la zona afectada",
+        "Sensibilidad aumentada al tacto",
+        "Pérdida progresiva de la sensibilidad",
+        "Síntomas que suelen iniciar en los pies y avanzar hacia arriba"
+      ],
+      "whenToConsult": "Se recomienda consultar cuando el hormigueo, dolor o adormecimiento es persistente, progresa con el tiempo, o se acompaña de debilidad muscular o dificultad para caminar.",
+      "approach": "La evaluación incluye historia clínica, exploración neurológica detallada y, cuando es necesario, estudios de electromiografía y neuroconducción para caracterizar el tipo de neuropatía. El tratamiento se dirige tanto a la causa de fondo, cuando es identificable, como al control sintomático del dolor neuropático.",
+      "faqs": [
+        { "question": "¿La neuropatía diabética se puede revertir?", "answer": "El daño establecido no siempre es reversible, pero un buen control metabólico puede frenar su progresión y, en etapas tempranas, favorecer cierta recuperación." },
+        { "question": "¿Es necesaria una biopsia de nervio?", "answer": "En la mayoría de los casos no. Se reserva para situaciones específicas en las que el diagnóstico no es claro con la evaluación clínica y los estudios neurofisiológicos." },
+        { "question": "¿El dolor neuropático se puede controlar?", "answer": "Sí. Existen tratamientos específicos para el dolor de origen neuropático, distintos a los analgésicos convencionales, que suelen ofrecer buen control cuando se ajustan de forma individualizada." }
+      ]
+    },
+    {
+      "id": "parkinson",
+      "overview": "La enfermedad de Parkinson y otros trastornos del movimiento, como el temblor esencial y las distonías, requieren una evaluación clínica experta para diferenciarlos entre sí y definir el tratamiento más adecuado para cada caso.",
+      "symptoms": [
+        "Temblor en reposo, generalmente de un lado del cuerpo",
+        "Rigidez muscular",
+        "Lentitud en los movimientos (bradicinesia)",
+        "Alteraciones del equilibrio y la marcha",
+        "Cambios en la escritura o el volumen de la voz",
+        "Reducción de la expresión facial"
+      ],
+      "whenToConsult": "Es recomendable acudir a valoración neurológica ante temblor de aparición reciente, lentitud progresiva de los movimientos, o cambios en la marcha y el equilibrio no explicados por otra causa.",
+      "approach": "El diagnóstico es principalmente clínico, basado en la exploración neurológica y la evolución de los síntomas. El tratamiento combina manejo farmacológico ajustado de forma individual, terapia física orientada al movimiento y seguimiento periódico para adaptar el plan conforme evoluciona la enfermedad.",
+      "faqs": [
+        { "question": "¿El temblor siempre significa Parkinson?", "answer": "No. Existen otras causas de temblor, como el temblor esencial, que tienen características y tratamiento distintos. La evaluación clínica permite diferenciarlos." },
+        { "question": "¿La enfermedad de Parkinson es hereditaria?", "answer": "La mayoría de los casos no tienen un patrón hereditario claro, aunque existen formas genéticas menos frecuentes, especialmente cuando el inicio es a edad temprana." },
+        { "question": "¿La terapia física realmente ayuda?", "answer": "Sí. La actividad física y la terapia orientada al movimiento son parte fundamental del tratamiento y han demostrado beneficio en la marcha, el equilibrio y la calidad de vida." }
+      ]
+    }
+  ]
+}

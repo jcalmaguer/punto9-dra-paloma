@@ -336,11 +336,27 @@
 /* auto-fit + minmax: maximum cards per row at any width, minimum 260px.
    No JS breakpoint logic needed — CSS handles the reflow automatically.
    Typical result: 3 columns on desktop, 2 on tablet, 1 on mobile. */
+/* Fixed 3 columns instead of auto-fit: with 6 specialty cards, auto-fit
+   would stretch them into a single row on wide viewports. A hard cap
+   keeps the 3+3 layout regardless of screen width, collapsing at the
+   same breakpoints as .process-steps for a consistent rhythm. */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin: 22px;
+}
+
+@media (max-width: 960px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Perfil / About ──────────────────────────────────────────────────────── */

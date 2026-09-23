@@ -7,7 +7,7 @@ import type { SpecialtiesData, SpecialtyItem } from '../types/types'
 // dementia  → brain outline with fading cross (cognitive decline)
 // neuropathy→ sinusoidal nerve fiber with terminal endpoints
 // parkinson → concentric tremor rings emanating from center
-const ICONS: Record<string, string> = {
+export const ICONS: Record<string, string> = {
 
   migraine: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M8 3A6 6 0 0 0 3 9c0 2.8 1.5 5.2 4 6.5V18a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2.5c2.5-1.3 4-3.7 4-6.5a6 6 0 0 0-6-6H8z"/>
@@ -51,17 +51,18 @@ const ICONS: Record<string, string> = {
   </svg>`,
 }
 
-function renderCard(item: SpecialtyItem): string {
+export function renderCard(item: SpecialtyItem): string {
   const icon = ICONS[item.icon] ?? ''
 
   return `
-    <article class="specialty-card" data-id="${item.id}">
+    <a class="specialty-card" href="especialidad.html?id=${item.id}" data-id="${item.id}">
       <div class="card-icon">
         ${icon}
       </div>
       <h3 class="card-title">${item.title}</h3>
       <p  class="card-desc">${item.description}</p>
-    </article>
+      <span class="card-more">Conocer más <span aria-hidden="true">→</span></span>
+    </a>
   `
 }
 

@@ -1,0 +1,333 @@
+/* ==========================================================================
+   SPECIALTYPAGE.CSS
+   Detail page for a single neurological specialty (especialidad.html)
+   Dra. Paloma Durán — Clinical Neurology
+
+   ARCHITECTURE NOTE:
+   This file only contains classes unique to the specialty detail page.
+   Shared pieces (.section, .eyebrow, .divider, .btn-primary,
+   .specialty-card, .cards-grid, .hero-actions) come from components.css
+   and sections.css, already loaded alongside this file.
+   ========================================================================== */
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+
+/* Sits in the body on a light background, not inside the navy hero —
+   right under the fixed navbar, so the two never visually compete for
+   the same "menu" reading. A hairline bottom border separates it from
+   the hero above without needing its own shadow or background block. */
+.breadcrumb-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 6vw;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--blue-light);
+}
+
+.breadcrumb__sep {
+  color: var(--border);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ── Detail hero ─────────────────────────────────────────────────────────── */
+
+/* A condensed version of the homepage hero: same navy institutional
+   register, but a fixed content band instead of 100vh — this is a
+   supporting page, not the first impression. */
+.specialty-hero {
+  background: var(--navy);
+  padding: 140px 6vw 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-hero--notfound {
+  padding-bottom: 100px;
+}
+
+/* Icon badge: same tinted-container language as .contact-icon,
+   scaled up since it's the visual anchor of the page header. */
+.specialty-hero__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(1, 146, 229, 0.16);
+  border: 1px solid rgba(130, 197, 244, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-accent);
+  margin-bottom: 24px;
+}
+
+.specialty-hero__icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--blue-accent);
+}
+
+.specialty-hero__eyebrow {
+  color: var(--blue-accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.specialty-hero__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  max-width: 720px;
+}
+
+.specialty-hero__desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 640px;
+}
+
+/* ── Prose wrapper ───────────────────────────────────────────────────────── */
+
+/* Centers reading-length content (overview, approach, FAQ) at a width
+   comfortable for continuous prose — narrower than the full section,
+   which is otherwise tuned for grids (cards, about-grid, etc). */
+.specialty-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.specialty-overview,
+.specialty-approach {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.specialty-block-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+/* ── Symptoms + callout split ────────────────────────────────────────────── */
+
+.specialty-split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 980px;
+}
+
+.symptom-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.symptom-list li {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.symptom-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* Callout: white card floating on the cream section, brand-blue left
+   border — same "attention strip" language as .step-card. */
+.specialty-callout {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue-light);
+  border-radius: 16px;
+  padding: 30px 28px;
+}
+
+.specialty-callout h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.specialty-callout p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.68;
+  margin-bottom: 20px;
+}
+
+/* ── FAQ ──────────────────────────────────────────────────────────────────── */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 4px 24px;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron: CSS-only, no icon asset — two rotated bars forming a "v"
+   that flips to a "^" when the <details> is open. */
+.faq-item__chevron {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.faq-item__chevron::before,
+.faq-item__chevron::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  width: 7px;
+  height: 1.5px;
+  background: var(--blue-light);
+  border-radius: 1px;
+}
+
+.faq-item__chevron::before { left: -1px; transform: rotate(45deg); }
+.faq-item__chevron::after  { left: 4px;  transform: rotate(-45deg); }
+
+.faq-item[open] .faq-item__chevron {
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.72;
+  padding: 0 0 20px;
+}
+
+/* ── Closing CTA band ────────────────────────────────────────────────────── */
+
+.specialty-cta {
+  background: var(--navy);
+  padding: 80px 6vw;
+  text-align: center;
+}
+
+.specialty-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.specialty-cta > p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 480px;
+  margin: 0 auto 30px;
+  line-height: 1.68;
+}
+
+.specialty-cta__actions {
+  justify-content: center;
+}
+
+.specialty-disclaimer {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.3);
+  max-width: 480px;
+  margin: 28px auto 0;
+  line-height: 1.6;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .specialty-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .specialty-hero {
+    padding: 120px 5vw 48px;
+  }
+
+  .specialty-cta {
+    padding: 64px 5vw;
+  }
+
+  .faq-item {
+    padding: 2px 18px;
+  }
+}

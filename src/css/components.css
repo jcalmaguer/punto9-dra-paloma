@@ -287,11 +287,14 @@
    overflow: hidden clips the top accent bar ::before pseudo-element. */
 .specialty-card {
   position: relative;
+  display: block;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 34px 30px;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
   transition:
     transform  0.3s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -376,6 +379,25 @@
   color: var(--text-muted);
   line-height: 1.72;
   margin: 0;
+}
+
+/* "Conocer más" affordance: the card is now a full link to the specialty's
+   detail page — this small tag makes that interactive intent visible
+   instead of relying only on the hover lift + cursor change. */
+.card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--blue-light);
+  margin-top: 16px;
+  transition: gap 0.2s ease;
+}
+
+.specialty-card:hover .card-more {
+  gap: 9px;
 }
 
 /* ── Contact form ─────────────────────────────────────────────────────────── */
