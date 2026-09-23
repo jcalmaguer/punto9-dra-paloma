@@ -543,6 +543,15 @@
   line-height: 1.6;
 }
 
+.form-legal a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+}
+
+.form-legal a:hover {
+  color: var(--blue-accent);
+}
+
 /* ── Social icon buttons ─────────────────────────────────────────────────── */
 
 /* Each social platform keeps its own brand color — patients recognizing

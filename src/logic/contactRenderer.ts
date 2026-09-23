@@ -168,7 +168,7 @@ export function renderContact(data: ContactData): string {
             <p class="form-sub">${data.form.subtitle}</p>
           </div>
 
-          <form action="" method="post" novalidate>
+          <form id="contact-form" novalidate>
 
             <div class="form-row">
               <div class="form-group">

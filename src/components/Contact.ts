@@ -1,5 +1,6 @@
 import contactData from '../data/contact.json'
 import { renderContact } from '../logic/contactRenderer'
+import { initContactForm } from '../logic/contactFormWhatsapp'
 import type { ContactData } from '../types/types'
 
 export function mountContact(containerId: string): void {
@@ -8,5 +9,7 @@ export function mountContact(containerId: string): void {
     console.warn(`[Contacto] Container #${containerId} not found`)
     return
   }
-  container.innerHTML = renderContact(contactData as ContactData)
+  const data = contactData as ContactData
+  container.innerHTML = renderContact(data)
+  initContactForm(containerId, data.whatsapp.href)
 }

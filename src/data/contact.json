@@ -28,9 +28,10 @@
     }
   ],
   "whatsapp": {
-    "label":    "Escribir por WhatsApp",
-    "href":     "https://wa.me/524621473525",
-    "sublabel": "Respuesta en menos de 2 horas"
+    "label":        "Escribir por WhatsApp",
+    "href":         "https://wa.me/524621473525",
+    "hrefOriginal": "https://wa.me/524621473525",
+    "sublabel":     "Respuesta en menos de 2 horas"
   },
   "reassurance": {
     "responseTime": "Primera respuesta garantizada en menos de 24 horas hábiles.",
@@ -40,7 +41,7 @@
     "title":       "Solicitar consulta",
     "subtitle":    "Te contactaremos para confirmar fecha y hora",
     "submitLabel": "Enviar solicitud",
-    "legal":       "Al enviar este formulario aceptas el manejo confidencial de tus datos con fines médicos, conforme a nuestra Política de Privacidad.",
+    "legal":       "Al enviar este formulario aceptas el manejo confidencial de tus datos con fines médicos, conforme a nuestro <a href=\"aviso-privacidad.html\">Aviso de Privacidad</a>.",
     "motivos": [
       "Cefalea o Migraña",
       "Epilepsia",
