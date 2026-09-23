@@ -37,6 +37,20 @@
     "responseTime": "Primera respuesta garantizada en menos de 24 horas hábiles.",
     "privacy":      "Tus datos clínicos son confidenciales y se manejan conforme a la NOM-024-SSA3 de expediente clínico electrónico."
   },
+  "schema": {
+    "telephone": "+524621473525",
+    "address": {
+      "street":     "Calle Dr. Javier Castellanos Coutiño, #516, Colonia San Pedro",
+      "locality":   "Irapuato",
+      "region":     "Guanajuato",
+      "postalCode": "36520"
+    },
+    "hours": {
+      "days":   ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens":  "09:00",
+      "closes": "18:00"
+    }
+  },
   "form": {
     "title":       "Solicitar consulta",
     "subtitle":    "Te contactaremos para confirmar fecha y hora",
