@@ -16,8 +16,8 @@
     "license":  "Neuróloga · Cédula 15382046"
   },
   "stats": [
-    { "value": "8", "suffix": "+", "label": "Años de experiencia como médica Cirujana" },
-    { "value": "6", "suffix": "+", "label": "Años de experiencia como neuróloga" },
+    { "value": "8", "suffix": "+", "label": "Años como médica cirujana" },
+    { "value": "6", "suffix": "+", "label": "Años como neuróloga" },
     { "value": "4",   "suffix": "k", "label": "Pacientes atendidos"  },
     { "value": "100",  "suffix": "%", "label": "Satisfacción"         }
   ]

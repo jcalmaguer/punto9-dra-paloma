@@ -80,7 +80,7 @@ export function renderHero(data: HeroData): string {
           </div>
         </div>
       </div>
-
+      <br>
       <!-- Stats -->
       <div class="hero-stats">
         ${renderStats(data.stats)}

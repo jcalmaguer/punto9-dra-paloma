@@ -42,7 +42,12 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 6vw 100px;
+  /* Bottom padding reserves clearance for the absolutely-positioned
+     .hero-stats bar: align-items: center only centers within this
+     padding box, so a taller bottom inset keeps the vertically-centered
+     content (badge → h1 → description → CTAs) from drifting down into
+     the stats row on shorter desktop viewports (~800px tall laptops). */
+  padding: 120px 6vw 140px;
 }
 
 /* Decorative SVG (concentric MRI circles): absolute, right side,
@@ -264,7 +269,7 @@
    ensures they never overlap the photo column at any viewport. */
 .hero-stats {
   position: absolute;
-  bottom: 36px;
+  bottom: 44px;
   left: 6vw;
   right: calc(360px + 6vw + 20px);
   display: flex;
@@ -275,12 +280,12 @@
 
 .stat-item {
   flex: 1;
-  padding-right: 32px;
+  padding-right: 24px;
   position: relative;
 }
 
 .stat-item + .stat-item {
-  padding-left: 32px;
+  padding-left: 24px;
   padding-right: 0;
 }
 
@@ -322,7 +327,7 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.42);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   margin-top: 5px;
 }
 
@@ -886,16 +891,50 @@ footer {
    About and contact grids collapse to single column. */
 @media (max-width: 960px) {
   .hero {
-    padding: 110px 6vw 140px;
+    padding: 110px 6vw 190px;
+    /* Top-align instead of vertically centering: on shorter viewports,
+       centered content can drift down far enough to crowd the stats
+       bar pinned near the bottom (see .hero-stats below). */
+    align-items: flex-start;
   }
 
   .hero-photo-col {
     display: none;
   }
 
+  /* A 4-across row leaves each item too narrow for the longer labels
+     ("Años de experiencia como médica Cirujana"), forcing an uneven
+     3-line wrap next to single-line neighbors. A 2×2 grid roughly
+     doubles the width per item so every label settles at 1–2 lines. */
   .hero-stats {
     right: 6vw;
-    bottom: 44px;
+    bottom: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 28px;
+    column-gap: 24px;
+  }
+
+  .stat-item,
+  .stat-item + .stat-item {
+    padding: 0;
+  }
+
+  .stat-item::before,
+  .stat-item + .stat-item::before {
+    display: none;
+  }
+
+  /* Divider now marks the right column only, positioned in the gap. */
+  .stat-item:nth-child(2n)::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    bottom: 4px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .about-grid {
@@ -938,7 +977,7 @@ footer {
   }
 
   .hero {
-    padding: 100px 5vw 160px;
+    padding: 100px 5vw 180px;
     align-items: flex-start;
   }
 
@@ -951,17 +990,16 @@ footer {
     align-items: stretch;
   }
 
-  /* Stats in a tight row — padding reduced but hairline dividers kept. */
+  /* Stats stay in the 2×2 grid from the tablet breakpoint — just tighter
+     gaps and smaller type to fit the narrower viewport. */
   .hero-stats {
-    bottom: 36px;
+    bottom: 40px;
+    column-gap: 16px;
+    row-gap: 22px;
   }
 
-  .stat-item {
-    padding-right: 16px;
-  }
-
-  .stat-item + .stat-item {
-    padding-left: 16px;
+  .stat-item:nth-child(2n)::before {
+    left: -8px;
   }
 
   .stat-num {
