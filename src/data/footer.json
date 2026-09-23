@@ -7,20 +7,21 @@
     {
       "title": "Especialidades",
       "links": [
-        { "text": "Cefalea y Migraña",   "href": "#especialidades" },
-        { "text": "Epilepsia",           "href": "#especialidades" },
-        { "text": "Esclerosis Múltiple", "href": "#especialidades" },
-        { "text": "Demencias",           "href": "#especialidades" },
-        { "text": "Parkinson",           "href": "#especialidades" }
+        { "text": "Cefalea y Migraña",       "href": "especialidad.html?id=migraine"   },
+        { "text": "Epilepsia",               "href": "especialidad.html?id=epilepsy"   },
+        { "text": "Esclerosis Múltiple",     "href": "especialidad.html?id=ms"         },
+        { "text": "Demencias",               "href": "especialidad.html?id=dementia"   },
+        { "text": "Neuropatías Periféricas", "href": "especialidad.html?id=neuropathy" },
+        { "text": "Parkinson",               "href": "especialidad.html?id=parkinson"  }
       ]
     },
     {
       "title": "Información",
       "links": [
-        { "text": "Sobre la Dra. Paloma", "href": "#perfil"    },
-        { "text": "Primera consulta",     "href": "#proceso"   },
-        { "text": "Convenios y seguros",  "href": "#contacto"  },
-        { "text": "Aviso de privacidad",  "href": "#"          }
+        { "text": "Sobre la Dra. Paloma", "href": "index.html#perfil"    },
+        { "text": "Primera consulta",     "href": "index.html#proceso"   },
+        { "text": "Convenios y seguros",  "href": "index.html#contacto"  },
+        { "text": "Aviso de privacidad",  "href": "aviso-privacidad.html"  }
       ]
     },
     {

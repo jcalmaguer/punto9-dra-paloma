@@ -1,0 +1,80 @@
+/* ==========================================================================
+   LEGALPAGE.CSS
+   Prose typography for legal/policy pages (aviso-privacidad.html)
+   Dra. Paloma Durán Botello — Clinical Neurology
+
+   ARCHITECTURE NOTE:
+   The page header (navy hero band) and breadcrumb reuse .specialty-hero
+   and .breadcrumb from css/specialtyPage.css — only the long-form legal
+   copy (headings, paragraphs, lists) is defined here.
+   ========================================================================== */
+
+.legal-intro {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.legal-section {
+  margin-top: 44px;
+}
+
+.legal-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.legal-section p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.78;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.legal-section p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section a {
+  color: var(--blue-light);
+  text-decoration: none;
+}
+
+.legal-section a:hover {
+  text-decoration: underline;
+}
+
+.legal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 18px;
+}
+
+.legal-list li {
+  position: relative;
+  padding-left: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.legal-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-light);
+}
