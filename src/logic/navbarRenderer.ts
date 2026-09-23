@@ -27,8 +27,8 @@ function renderLinks(links: NavLink[]): string {
 
 export function renderNavbar(data: NavbarData): string {
   return `
-    <nav>
-      <a href="#" class="nav-brand">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-brand">
         <div class="nav-logo">
           ${NEURO_ICON}
         </div>
@@ -38,13 +38,25 @@ export function renderNavbar(data: NavbarData): string {
         </div>
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         ${renderLinks(data.links)}
       </ul>
 
       <a href="${data.cta.href}" class="nav-cta">
         ${data.cta.label}
       </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-label="Abrir menú de navegación"
+        aria-controls="nav-links"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   `
 }

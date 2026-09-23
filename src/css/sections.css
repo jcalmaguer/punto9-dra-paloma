@@ -922,10 +922,6 @@ footer {
     display: none;
   }
 
-  .nav-links {
-    display: none;
-  }
-
   .footer-bottom {
     flex-direction: column;
     gap: 16px;

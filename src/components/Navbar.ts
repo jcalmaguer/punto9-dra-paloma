@@ -1,5 +1,6 @@
 import navbarData from '../data/navbar.json'
 import { renderNavbar } from '../logic/navbarRenderer'
+import { initNavbarInteractions } from '../logic/navbarInteractions'
 import type { NavbarData } from '../types/types'
 
 export function mountNavbar(containerId: string): void {
@@ -9,4 +10,5 @@ export function mountNavbar(containerId: string): void {
     return
   }
   container.innerHTML = renderNavbar(navbarData as NavbarData)
+  initNavbarInteractions(containerId)
 }

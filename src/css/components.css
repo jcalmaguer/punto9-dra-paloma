@@ -14,8 +14,11 @@
 /* Fixed nav with dark navy + blur creates an "institutional header" feeling.
    The patient sees it on every scroll: it must radiate trust at all times.
    rgba over solid color allows the page content to remain visible
-   underneath while the bar stays readable — never fully transparent. */
-nav {
+   underneath while the bar stays readable — never fully transparent.
+   Scoped to .site-nav (not a bare `nav` tag selector): other pages add
+   their own <nav> landmarks (e.g. the breadcrumb) that must NOT inherit
+   this fixed, full-bleed chrome treatment. */
+.site-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -27,6 +30,13 @@ nav {
   background: #06172B;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: box-shadow 0.25s ease;
+}
+
+/* Elevation once the page has scrolled past the hero top —
+   gives the fixed bar depth instead of a hard-edged line over content. */
+.site-nav.nav--scrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
 /* Brand block: logo icon + doctor name stacked in two lines.
@@ -98,6 +108,59 @@ nav {
   color: var(--white);
 }
 
+/* ── Nav — mobile dropdown ───────────────────────────────────────────────── */
+
+/* Below the tablet breakpoint, .nav-links leaves the horizontal bar and
+   becomes a slide-down panel anchored to nav (position: relative on nav
+   is implied by it being the offset parent via position: fixed above).
+   Kept as opacity/transform (not display:none) so the toggle animates
+   and the panel is always present in the DOM for aria-expanded state. */
+@media (max-width: 960px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #06172B;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4px 6vw 12px;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  }
+
+  .nav-links--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 2px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+}
+
 /* CTA pill: filled brand blue — stands out from the ghost-style nav links.
    !important guards against link color inheritance from .nav-links a. */
 .nav-cta {
@@ -114,6 +177,37 @@ nav {
 .nav-cta:hover {
   background: var(--blue-dark) !important;
 }
+
+/* Hamburger toggle — hidden on desktop, shown at the tablet breakpoint
+   where .nav-links collapses into a dropdown panel (see media query below). */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* Morphs the three bars into an X when the menu is open. */
+.nav-toggle--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle--open span:nth-child(2) { opacity: 0; }
+.nav-toggle--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Buttons ─────────────────────────────────────────────────────────────── */
 
