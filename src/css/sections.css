@@ -165,7 +165,6 @@
   color: rgba(255, 255, 255, 0.62);
   max-width: 480px;
   margin-bottom: 42px;
-  text-align: justify;
 }
 
 .hero-actions {
@@ -536,7 +535,6 @@
    in sections.css (margin-bottom: 14px) applies cleanly. */
 .about-bio {
   margin-bottom: 4px;
-  text-align: justify;
 }
 
 /* ── Proceso ─────────────────────────────────────────────────────────────── */
@@ -705,106 +703,6 @@
   }
 }
 
-/* ── Contacto ────────────────────────────────────────────────────────────── */
-
-/* Returns to navy after the white testimonials section — the color rhythm
-   bookends the page: Navy (hero) → light sections → Navy (contact).
-   Patients subconsciously read this as "we're back to where the doctor is." */
-.contact-section {
-  background: var(--navy);
-  padding: 96px 6vw;
-}
-
-/* Asymmetric grid: the form column is 30% wider than the info column.
-   The form is the primary action — it deserves more visual real estate. */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.contact-info h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.1rem;
-  font-weight: 500;
-  color: var(--white);
-  margin-bottom: 14px;
-  line-height: 1.2;
-}
-
-.contact-info h2 em {
-  font-style: italic;
-  color: var(--blue-accent);
-}
-
-.contact-info > p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.91rem;
-  color: rgba(255, 255, 255, 0.58);
-  line-height: 1.76;
-  margin-bottom: 34px;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Contact data row: icon + label + value.
-   align-items: center works when value is a single line.
-   For multi-line values (address), switch to flex-start via modifier. */
-.contact-item {
-  display: flex;
-  gap: 13px;
-  align-items: center;
-}
-
-/* Icon container: brand blue at 18% opacity — present on navy without
-   creating a harsh filled square. The icon SVG uses --blue-accent
-   (lighter) to ensure contrast against the dark tinted background. */
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 9px;
-  background: rgba(1, 146, 229, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 19px;
-  height: 19px;
-  stroke: var(--blue-accent);
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* Label + value stacked vertically inside each contact row. */
-.c-strong {
-  display: block;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.38);
-  margin-bottom: 2px;
-}
-
-.c-val {
-  display: block;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.91rem;
-  color: var(--white);
-  line-height: 1.4;
-}
-
 /* ── Footer ──────────────────────────────────────────────────────────────── */
 
 /* Deeper than --navy (#0B2545): #06172B creates a clear visual
@@ -848,7 +746,6 @@ footer {
   line-height: 1.68;
   margin-top: 12px;
   max-width: 230px;
-  text-align: justify;
 }
 
 /* Column headings: same eyebrow treatment as section headers —
