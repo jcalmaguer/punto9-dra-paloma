@@ -1,16 +1,16 @@
 {
   "brand": {
-    "name":      "Dra. Paloma Montiel",
+    "name":      "Dra. Paloma Durán Botello",
     "specialty": "Especialidad en Neurología"
   },
   "links": [
-    { "label": "Especialidades", "href": "#especialidades" },
-    { "label": "Perfil",         "href": "#perfil"         },
-    { "label": "Proceso",        "href": "#proceso"        },
-    { "label": "Testimonios",    "href": "#testimonios"    }
+    { "label": "Especialidades", "href": "index.html#especialidades" },
+    { "label": "Perfil",         "href": "index.html#perfil"         },
+    { "label": "Proceso",        "href": "index.html#proceso"        },
+    { "label": "Testimonios",    "href": "index.html#testimonios"    }
   ],
   "cta": {
     "label": "Agendar cita",
-    "href":  "#contacto"
+    "href":  "index.html#contacto"
   }
 }
